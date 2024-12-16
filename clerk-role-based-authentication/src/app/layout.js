@@ -5,6 +5,7 @@ import {
 } from "@clerk/nextjs";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
           <ClerkLoaded>
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col h-screen">
+              <Navbar />
               {children}
             </div>
           </div>
