@@ -1,11 +1,14 @@
 import { SignedOut, UserButton } from "@clerk/nextjs";
-import { auth } from "@clerk/nextjs/server";
+import { auth, currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
 import React from "react";
 
 const Navbar = async() => {
   const { userId } = await auth();
-  console.log({userId});
+
+  const user = await currentUser();
+
+  // console.log({userId});
   return (
     <div className="bg-cyan-950 rounded-b-xl">
       <ul className="flex justify-between py-4 px-6">
