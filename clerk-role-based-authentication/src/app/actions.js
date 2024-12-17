@@ -16,8 +16,8 @@ export async function toggleUserRole() {
     const user = await currentUser();
     
     // Determine new role, with fallback
-    const currentRole = user.publicMetadata?.role || "user";
-    const newRole = currentRole === "admin" ? "user" : "admin";
+    const currentRole = user.publicMetadata?.role || "not set";
+    const newRole = currentRole === "not set" ? "user" : "admin";
 
     // Update user with new role
     const client = await clerkClient();

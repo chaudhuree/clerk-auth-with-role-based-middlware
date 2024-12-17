@@ -3,6 +3,7 @@ import { useState } from "react";
 import { toggleUserRole } from "./actions";
 
 export default function RoleUpdateButton({ currentRole }) {
+  console.log(currentRole)
   const [status, setStatus] = useState("");
   const [role, setRole] = useState(currentRole || "user");
 
@@ -31,7 +32,7 @@ export default function RoleUpdateButton({ currentRole }) {
         onClick={handleToggleRole}
         className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
       >
-        {role === "admin" ? "Change Role to User" : "Change Role to Admin"}
+        {role === "not set" ? "Change Role to User" : role === "admin" ? "Change Role to User" : "Change Role to Admin"}
       </button>
       {status && (
         <p

@@ -14,7 +14,7 @@ export default async function Home() {
           {user?.publicMetadata.role || "Not Set"}
         </span>
       </div>
-      <RoleUpdateButton currentRole={user?.publicMetadata.role==="admin" ? "admin" : "user"} />
+      <RoleUpdateButton currentRole={user?.publicMetadata.role===undefined ? "not set" : user?.publicMetadata.role==="admin" ? "admin" : "user"} />
     </div>
   );
 }
