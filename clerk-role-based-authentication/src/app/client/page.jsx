@@ -11,8 +11,8 @@ const ClientPage = () => {
 
   useEffect(() => {
     if (isLoaded && isSignedIn) {
-      // Strict role check for admin
-      if (user?.publicMetadata.role !== "admin") {
+      // Strict role check for user
+      if (user?.publicMetadata.role !== "user") {
         router.push("/");
       } else {
         setIsAuthorized(true);
@@ -27,7 +27,7 @@ const ClientPage = () => {
 
   return (
     <div className="h-full flex flex-col items-center justify-center text-2xl">
-      Hello, {user?.firstName} - Admin Access Granted
+      Hello, {user?.firstName} - this is a user page only
     </div>
   );
 };

@@ -21,6 +21,7 @@ export async function toggleUserRole() {
 
     // Update user with new role
     const client = await clerkClient();
+    // NOTE: logic -> aita clerk metadata te update korar sathe sathe role ta k database e o save korte hobe .and oikhaneo update korte hobe
     const updatedUser = await client.users.updateUserMetadata(userId, {
       publicMetadata: {
         role: newRole
